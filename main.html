@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        aside {
+            width: 200px;
+            position: fixed;
+            left: -10px;
+            top: 200px;
+        }
+    </style>
+    <title>主要的 HTML 檔</title>
+</head>
+
+<body>
+    <nav></nav>
+    <aside></aside>
+    <main></main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        const nav = document.querySelector("nav");
+        const aside = document.querySelector("aside");
+
+
+        const url = "nav.html"
+        fetch(url).then(function (response) {
+            // 收到 server 回應
+            console.log(response);
+            if (response.status != 200) {
+                // 要處理錯誤
+                return
+            }
+            return response.text()
+        }).then(function (result) {
+            // 收到解析
+            // console.log(result);
+            nav.innerHTML = result
+        }).catch(function (error) {
+            // 補獲錯誤
+            console.log(error);
+
+        });
+
+        const urlAside = "aside.html"
+        fetch(urlAside).then(function (response) {
+            // 收到 server 回應
+            console.log(response);
+            if (response.status != 200) {
+                // 要處理錯誤
+                return
+            }
+            return response.text()
+        }).then(function (result) {
+            // 收到解析
+            // console.log(result);
+            aside.innerHTML = result
+        }).catch(function (error) {
+            // 補獲錯誤
+            console.log(error);
+
+        });
+    </script>
+</body>
+
+</html>
