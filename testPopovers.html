@@ -15,10 +15,20 @@
             data-bs-content="And here’s some amazing content. It’s very engaging. Right?">Click to toggle
             popover</button>
         <div class="py-3">
-            感謝因而執法也在以外，一方面青年巨大鈴聲字體保護大約教育活動初步形象編輯，對手分別為主透露成了一流那麼紛紛，商城多麼晶片網際快車舉報靈魂第一招聘損失鬱悶筆者楠雅股份，階段瞭解，我覺得站點研究填寫，<span
+            感謝因而執法也在以外，一方面<a data-bs-toggle="tooltip" data-bs-title="手裡好看適當部隊樂隊一口氣主任不出很，"
+                href="#">青年巨大鈴</a>聲字體保護大約教育活動初步形象編輯，對手分別為主透露成了一流那麼紛紛，商城多麼晶片網際快車舉報靈魂第一招聘損失鬱悶筆者楠雅股份，階段瞭解，我覺得站點研究填寫，<span
                 data-bs-toggle="popover" data-bs-content="你在對待有效不要郵箱讓人，應該三年阿摩斯，法國遠。" data-bs-title="容易一股幫忙和他"
-                class="text-danger">近日</span>信箱最多民族美女，對付書記所在淡淡設立職責報紙，複製版面，不到幸福留言心裡得分標題把他動物讀書，手裡好看適當部隊樂隊一口氣主任不出很，
+                class="text-danger">近日</span>信箱最多民族美女，對付書記所在淡淡設立職責報紙，複製版面，不到幸福留言心裡得分標題把他動物讀書，
         </div>
+
+        <p class="muted">Placeholder text to demonstrate some <a href="#" data-bs-toggle="tooltip"
+                data-bs-title="Default tooltip">inline links</a> with tooltips. This is now just filler, no killer.
+            Content placed here just to mimic the presence of <a href="#" data-bs-toggle="tooltip"
+                data-bs-title="Another tooltip">real text</a>. And all that just to give you an idea of how tooltips
+            would look when used in real-world situations. So hopefully you’ve now seen how <a href="#"
+                data-bs-toggle="tooltip" data-bs-title="Another one here too">these tooltips on links</a> can work in
+            practice, once you use them on <a href="#" data-bs-toggle="tooltip" data-bs-title="The last tip!">your
+                own</a> site or project.</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -26,8 +36,11 @@
         crossorigin="anonymous"></script>
     <script>
         const popovers = document.querySelectorAll("[data-bs-toggle=popover]");
-        console.log(popovers);
         popovers.forEach(popover => new bootstrap.Popover(popover));
+
+
+        const tooltips = document.querySelectorAll("[data-bs-toggle=tooltip]");
+        tooltips.forEach(tooltip => new bootstrap.Tooltip(tooltip));
 
     </script>
 </body>
