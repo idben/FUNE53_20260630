@@ -8,7 +8,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
         body {
-            height: 100vh;
+            min-height: 100vh;
         }
 
         .w250px {
@@ -19,7 +19,7 @@
 </head>
 
 <body class="d-flex">
-    <nav id="nav" class="collapse collapse-horizontal show">
+    <nav id="nav" class="collapse collapse-horizontal">
         <div class="w250px leftMenu p-2 h-100 bg-primary-subtle">
             <button class="btn btn-primary w-100" data-bs-toggle="collapse" data-bs-target="#menu1">選項 1</button>
             <div id="menu1" class="collapse">
@@ -62,15 +62,151 @@
 
                 <button class="btn btn-primary">選項 5</button>
             </div>
+
+
+            <div class="accordion mt-3" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Accordion Item #1111
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>This is the first item’s accordion body.</strong> It is shown by default, until the
+                            collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes control the overall appearance, as well as the showing and hiding via CSS
+                            transitions. You can modify any of this with custom CSS or overriding our default variables.
+                            It’s also worth noting that just about any HTML can go within the
+                            <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Accordion Item #2
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>This is the second item’s accordion body.</strong> It is hidden by default, until
+                            the collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes control the overall appearance, as well as the showing and hiding via CSS
+                            transitions. You can modify any of this with custom CSS or overriding our default variables.
+                            It’s also worth noting that just about any HTML can go within the
+                            <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Accordion Item #3
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the
+                            collapse plugin adds the appropriate classes that we use to style each element. These
+                            classes control the overall appearance, as well as the showing and hiding via CSS
+                            transitions. You can modify any of this with custom CSS or overriding our default variables.
+                            It’s also worth noting that just about any HTML can go within the
+                            <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
-    <main class="h-100 flex-fill">
-        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#nav">開合側邊</button>
+    <main class="h-100 flex-fill p-2">
+        <button class="btn btn-primary mb-3" data-bs-toggle="collapse" data-bs-target="#nav">開合側邊</button>
+
+        <!-- 內容寫死的方法 -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane"
+                    type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"
+                    disabled>Disabled</button>
+            </li>
+        </ul>
+        <div class="tab-content border border-top-0 py-5 px-2" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                tabindex="0">home 的內容</div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                profile 的內容</div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                contact 的內容</div>
+            <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
+                tabindex="0">...</div>
+        </div>
+
+        <!-- 與上面比對, 資料活的寫法 -->
+        <div class="nav nav-tabs my-tab-01 mt-3">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            <a class="nav-link" href="#profile">Profile</a>
+            <a class="nav-link" href="#contact">Contact</a>
+        </div>
+        <div class="border p-3 border-top-0 my-content">
+            <!-- 放 fetch 進來的內容 -->
+        </div>
+
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
+    <script>
+        const navLinks = document.querySelectorAll(".my-tab-01 .nav-link");
+        const myContent = document.querySelector(".my-content");
+
+        window.addEventListener("hashchange", function () {
+            console.log(window.location.hash.slice(1));
+            const hashtag = window.location.hash.slice(1);
+            document.querySelector(".my-tab-01 .nav-link.active")?.classList.remove("active")
+            loadContent(hashtag);
+            if (hashtag == "home") {
+                navLinks[0].classList.add("active");
+                return;
+            }
+            if (hashtag == "profile") {
+                navLinks[1].classList.add("active");
+                return;
+            }
+            if (hashtag == "contact") {
+                navLinks[2].classList.add("active")
+                return;
+            }
+        })
+
+
+        function loadContent(name) {
+            fetch(`${name}.txt`).then(res => {
+                return res.text()
+            }).then(data => {
+                myContent.innerHTML = data
+            }).catch(error => {
+                console.log(error);
+
+            });
+        }
+    </script>
 </body>
 
 </html>
